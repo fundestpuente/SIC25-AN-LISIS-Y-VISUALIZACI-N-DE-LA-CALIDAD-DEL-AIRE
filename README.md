@@ -79,7 +79,8 @@ ANÁLISIS Y VISUALIZACIÓN DE LA CALIDAD DEL AIRE/
 │
 ├── src/                        # Código fuente de los módulos
 │   ├── data_acquisition.py
-│   ├── data_processing.py
+│   ├── data_interpretation.py
+│   └── data_processing.py
 │   └── data_visualization.py
 │
 ├── main.ipynb                  # Notebook principal del proyecto
@@ -93,7 +94,7 @@ ANÁLISIS Y VISUALIZACIÓN DE LA CALIDAD DEL AIRE/
 
 ## ✅ Herramientas Implementadas
 - **Lenguaje:** Python 3.13+
-- **Librerías principales:** `pandas, numpy, matplotlib, seaborn, scipy`
+- **Librerías principales:** `pandas, numpy, matplotlib, seaborn`
 - **Otras herramientas:** `Jupyter Notebook / VS Code, Git + GitHub`
 
 ---
