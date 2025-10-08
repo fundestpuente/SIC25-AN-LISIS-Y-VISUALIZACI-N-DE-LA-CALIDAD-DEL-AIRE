@@ -63,7 +63,6 @@ proyecto-xx-nombre/
 ├── requirements.txt      # Dependencias del proyecto
 ├── src/                  # Código fuente del proyecto
 │   ├── data_acquisition.py
-│   └── data_interpretation.py
 │   └── data_processing.py
 │   └── data_visualization.py
 ├── data/                 # Datos de ejemplo 
