@@ -1,4 +1,4 @@
-# 📌 Análisis de la calidad del aire: una exploración de contaminantes atmosféricos y su relación con el PM2.5
+# 📌 Análisis y Visualización de la calidad del Aire : una exploración de contaminantes atmosféricos y su relación con el PM2.5
 **Curso:** Samsung Innovation Campus – Módulo de Python (Ecuador 2025)  
 **Seccion:** EC03  
 **Carpeta:** `/EC03/ANÁLISIS Y VISUALIZACIÓN DE LA CALIDAD DEL AIRE`
