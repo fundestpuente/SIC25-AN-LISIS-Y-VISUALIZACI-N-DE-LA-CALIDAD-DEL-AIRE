@@ -43,8 +43,8 @@ Se combinan técnicas de análisis estadístico, algoritmos y visualización de 
 
 1. **Clonar el repositorio o ubicarte en la carpeta del proyecto:**
    ```bash
-   git clone https://github.com/fundestpuente/sic-ecuador-2025-proyectos.git
-   cd "EC03/ANÁLISIS Y VISUALIZACIÓN DE LA CALIDAD DEL AIRE"
+   git clone https://github.com/fundestpuente/SIC25-AN-LISIS-Y-VISUALIZACI-N-DE-LA-CALIDAD-DEL-AIRE.git
+   cd "SIC25-AN-LISIS-Y-VISUALIZACI-N-DE-LA-CALIDAD-DEL-AIRE"
    ```
 
 2. **Instalar dependencias:**
