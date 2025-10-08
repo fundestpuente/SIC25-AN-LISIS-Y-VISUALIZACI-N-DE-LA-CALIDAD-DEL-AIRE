@@ -62,8 +62,10 @@ proyecto-xx-nombre/
 ├── README.md             # Este archivo (personalizar)
 ├── requirements.txt      # Dependencias del proyecto
 ├── src/                  # Código fuente del proyecto
-│   ├── module1.py
-│   └── module2.py
+│   ├── data_acquisition.py
+│   └── data_interpretation.py
+│   └── data_processing.py
+│   └── data_visualization.py
 ├── data/                 # Datos de ejemplo 
 ├── docs/                 # Documentación adicional (opcional)
 └── .gitignore
