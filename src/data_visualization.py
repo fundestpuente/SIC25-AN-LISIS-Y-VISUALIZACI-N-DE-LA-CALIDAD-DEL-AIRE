@@ -102,13 +102,18 @@ def plot_ica_distribution(df: pd.DataFrame, figsize: Tuple[int, int] = (12, 5), 
     plt.show()
 
 
-def plot_correlation_matrix(df: pd.DataFrame, columnas: Optional[List[str]] = None, figsize: Tuple[int, int] = (10, 8), save_path: Optional[str] = None) -> None:
-    """Matriz de correlación entre contaminantes.
-    Parámetros:
-        df: DataFrame con los datos.
-        columnas: Lista de columnas a incluir (por defecto, todas las de CONTAMINANTES presentes).
-        figsize: Tamaño de la figura.
-        save_path: Ruta para guardar la imagen (si se proporciona).
+def plot_correlation_matrix(
+    df: pd.DataFrame,
+    columnas: Optional[List[str]] = None,
+    figsize: Tuple[int, int] = (10, 8),
+    save_path: Optional[str] = None,
+    ref: str = "pm2_5",
+    top_k: int = 5,
+    print_top: bool = True,
+) -> Optional[pd.DataFrame]:
+    """
+    Matriz de correlación entre contaminantes (Seaborn) + impresión opcional del TOP con ref.
+    Devuelve la matriz de correlaciones para reuso en otros pasos.
     """
     if columnas is None:
         columnas = [c for c in CONTAMINANTES if c in df.columns]
@@ -117,18 +122,26 @@ def plot_correlation_matrix(df: pd.DataFrame, columnas: Optional[List[str]] = No
 
     if len(columnas) < 2:
         print("❌ Se necesitan al menos 2 columnas para calcular correlaciones.")
-        return
-
+        return None
     corr = df[columnas].corr()
-
     plt.figure(figsize=figsize)
-    sns.heatmap(corr, annot=True, cmap='RdYlGn', center=0, fmt=".2f", linewidths=.5, cbar_kws={'label': 'Correlación'})
+    sns.heatmap(
+        corr, annot=True, cmap='RdYlGn', center=0,
+        fmt=".2f", linewidths=.5, cbar_kws={'label': 'Correlación'}
+    )
     plt.title("Matriz de Correlación entre Contaminantes", fontsize=16, fontweight='bold')
     plt.tight_layout()
-
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
+    if print_top and ref in corr.columns:
+        serie = corr[ref].drop(labels=[ref], errors='ignore').dropna().sort_values(ascending=False)
+        top = serie.head(top_k)
+        print("🔎 Correlaciones más altas con PM2.5:")
+        for k, v in top.items():
+            print(f" - {k}: {v:.2f}")
+
+    return corr
 
 
 def plot_heatmap_hourly(df: pd.DataFrame, columna: str = 'pm2_5', figsize: Tuple[int, int] = (12, 6), save_path: Optional[str] = None) -> None:
