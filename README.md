@@ -3,7 +3,7 @@
 
 **Curso:** Samsung Innovation Campus – Módulo de Python (Ecuador 2025)  
 **Sección:** EC03  
-**Carpeta:** `/EC03/ANÁLISIS Y VISUALIZACIÓN DE LA CALIDAD DEL AIRE`
+**Carpeta:** `/SIC25-AN-LISIS-Y-VISUALIZACI-N-DE-LA-CALIDAD-DEL-AIRE`
 
 ---
 
